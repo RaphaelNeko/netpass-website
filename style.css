@@ -148,7 +148,7 @@ div.dialogue-box p:first-child {
 }
 
 header {
-	background: url(../img/bg-pattern.png);
+	background: url(img/bg-pattern.png);
 	background-size: contain;
 	background-position: center;
 	height: 500px;
@@ -197,7 +197,7 @@ div.banner div.bg {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: url(../img/dot-pattern.png);
+	background: url(img/dot-pattern.png);
 	background-position: 0% 0%;
 	background-size: 32px;
 	animation: bg-banner-scroll infinite 6s linear;
