@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NetPass | A new way to experience StreetPass!</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+</head>
+
+<body>
+	<nav>
+		<a href="#"><img src="img/logos/netpass.svg" alt="NetPass logo"></a>
+		<div>
+			<a href="#about">
+				<p class="lang-en">About</p>
+			</a>
+			<a href="https://discord.gg/netpass" target="_blank">Discord</a>
+			<a href="https://gitlab.com/Sorunome/3ds-streetpass" target="_blank">
+				<p class="lang-en">Source code</p>
+			</a>
+			<a href="#download">
+				<p class="lang-en">Download</p>
+			</a>
+		</div>
+	</nav>
+
+	<header data-aos="fade" data-aos-duration="1000">
+		<img src="img/header-netpal-artwork.png" alt="NetPal from NetPass artwork">
+		<div class="dialogue-box" id="netpal-header-db" style="scale: 0;">
+			<p>NetPal</p>
+			<p class="lang-en header-typewrite">A new way to experience StreetPass!</p>
+		</div>
+	</header>
+
+	<div class="banner" id="about">
+		<div class="bg"></div>
+		<div style="display: flex; justify-content: center; align-items: center; gap: 0 20px; flex-wrap: wrap;">
+			<p>Introducing</p>
+			<img src="img/logos/netpass.svg" alt="NetPass logo">
+		</div>
+	</div>
+
+	<section class="introducing">
+		<p class="lang-en intro" data-aos="fade-up" data-aos-delay="500">
+			In the current state of the world, the Nintendo 3DS is, sadly, on decline. That makes getting StreetPasses
+			harder and harder, due to fewer and fewer people taking their 3DS with them on a walk.
+		</p>
+		<p class="lang-en comes-in" data-aos="fade-up" data-aos-delay="600">
+			This is where <span style="--i:1">N</span><span style="--i:2">e</span><span style="--i:3">t</span><span
+				style="--i:4">P</span><span style="--i:5">a</span><span style="--i:6">s</span><span
+				style="--i:7">s</span> comes in!
+		</p>
+		<div class="screenshots" data-aos="fade-up" data-aos-delay="700" data-aos-offset="0">
+			<div class="container">
+				<img src="img/3ds/3ds-concept-1.png">
+				<img src="img/3ds/3ds-concept-2.png">
+				<img src="img/3ds/3ds-concept-3.png">
+				<img src="img/3ds/3ds-concept-4.png">
+				<img src="img/3ds/3ds-concept-1.png">
+				<img src="img/3ds/3ds-concept-2.png">
+				<img src="img/3ds/3ds-concept-3.png">
+				<img src="img/3ds/3ds-concept-4.png">
+			</div>
+		</div>
+		<p class="lang-en" data-aos="fade-up" data-aos-offset="0">
+			Unlike StreetPass, NetPass works over the internet. Upon opening NetPass, you can pick various locations to
+			go to, i.e. the train station, or a town plaza. Upon entering a location, you get passes of others who are
+			in the same location! And, while you are at the location, others who enter it can get passes with you. But
+			beware! You can only switch locations once every 10 hours!
+		</p>
+	</section>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			AOS.init();
+			headerTypewrite();
+		});
+
+		function headerTypewrite() {
+			var dialogueBox = document.getElementById('netpal-header-db')
+			setTimeout(() => {
+				dialogueBox.style.scale = 1;
+				var typewrite = dialogueBox.getElementsByClassName('header-typewrite');
+				for (let i = 0; i < typewrite.length; i++) {
+					const element = typewrite[i];
+					var txt = element.innerHTML;
+					element.innerHTML = "";
+					setTimeout(() => {
+						var typewriter = new Typewriter(element, {
+							delay: 35,
+							cursor: ''
+						});
+						typewriter.typeString(txt).start();
+					}, 300);
+				}
+			}, 500);
+		}
+	</script>
+</body>
+
+</html>
