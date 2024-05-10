@@ -85,29 +85,30 @@ nav a img {
 	height: 50px;
 }
 
-nav div {
+nav div.links {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 30px;
+
+	transition: all 200ms ease;
 }
 
-nav div a {
+nav div.links a {
 	text-decoration: none;
 	color: #fff;
 }
 
-nav div a:last-child {
+nav div.links a:last-child {
 	background: linear-gradient(#f7fdfb, #e3faed);
 	color: var(--np-green-dark);
 	padding: 10px 20px;
 	border-radius: 10px;
-	box-shadow: 0 2px 3px #00000044;
 	box-shadow: inset 0 0 0 0px var(--np-blue-selection), 0 2px 3px #00000044, inset 0 0 10px 5px #00000000;
 	transition: all 150ms ease;
 }
 
-nav div a:last-child:hover {
+nav div.links a:last-child:hover {
 	box-shadow: inset 0 0 0 5px var(--np-blue-selection), 0 2px 3px #00000044, inset 0 0 10px 5px #00000033;
 	color: var(--np-blue-darker);
 	/* color: #fff;
@@ -120,6 +121,49 @@ nav div a:last-child:hover {
 		-2px 2px 1px var(--np-blue-darker),
 		-2px -2px 1px var(--np-blue-darker),
 		2px -2px 1px var(--np-blue-darker); */
+}
+
+nav button {
+	display: none;
+	background: linear-gradient(#f7fdfb, #e3faed);
+	min-height: 40px;
+	min-width: 40px;
+	border-radius: 10px;
+	border: none;
+	box-shadow: inset 0 0 0 0px var(--np-blue-selection), 0 2px 3px #00000044, inset 0 0 10px 5px #00000000;
+	position: relative;
+}
+
+nav button span {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 3px;
+	background: var(--np-green-dark);
+	transition: all 200ms ease;
+	transform: translate(-50%, -50%) scaleX(1) rotate(0);
+}
+
+nav button span:nth-child(1) {
+	transform: translate(-50%, calc(-50% - 7px)) scaleX(1) rotate(0);
+}
+
+nav button span:nth-child(3) {
+	transform: translate(-50%, calc(-50% + 7px)) scaleX(1) rotate(0);
+}
+
+nav button span:nth-child(1).burger-opened {
+	transform: translate(-50%, -50%) scaleX(1) rotate(45deg);
+}
+
+nav button span:nth-child(2).burger-opened {
+	transform: translate(-50%, -50%) scaleX(0) rotate(0);
+}
+
+nav button span:nth-child(3).burger-opened {
+	transform: translate(-50%, -50%) scaleX(1) rotate(-45deg);
 }
 
 div.dialogue-box {
@@ -153,6 +197,7 @@ header {
 	background-position: center;
 	height: 500px;
 	position: relative;
+	overflow: hidden;
 }
 
 header img {
@@ -254,9 +299,14 @@ div.screenshots div.container img {
 }
 
 
+/*? /////////////////// */
+/*? ANIMATION KEYFRAMES */
+/*? /////////////////// */
 
 @keyframes rotation-small-slow {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: rotate(3deg);
 	}
 
@@ -279,16 +329,97 @@ div.screenshots div.container img {
 	0% {
 		transform: translateX(0px);
 	}
+
 	100% {
 		transform: translateX(-1200px);
 	}
 }
 
+@keyframes intro-screenshots-scroll-mobile {
+	0% {
+		transform: translateX(0px);
+	}
+
+	100% {
+		transform: translateX(-800px);
+	}
+}
+
 @keyframes wave-anim {
-	0%, 40%, 100% {
+
+	0%,
+	40%,
+	100% {
 		transform: translateY(0);
 	}
+
 	20% {
 		transform: translateY(-5px);
+	}
+}
+
+
+
+/*? ////////////////// */
+/*?     RESPONSIVE     */
+/*? ////////////////// */
+
+
+/* 670 */
+@media screen and (max-width: 670px) {
+	nav button {
+		display: block;
+	}
+
+	nav div.links {
+		position: fixed;
+		top: 73px;
+		right: 20px;
+		margin-left: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0px;
+		background: linear-gradient(-45deg, var(--np-green-dark), var(--np-blue-darker));
+		padding: 0px;
+		border-radius: 0 0 20px 20px;
+		border: solid 4px #fff;
+		border-top: none;
+		z-index: -1;
+		overflow: hidden;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	nav div.links.burger-opened {
+		padding: 15px 15px 15px 25px;
+		gap: 15px 25px;
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	header {
+		height: 300px;
+	}
+	
+	header img {
+		transform: translateX(-50px);
+	}
+	
+	header div.dialogue-box {
+		left: inherit;
+		right: 4vw;
+		max-width: 250px;
+		transform: translate(0, calc(-50% + 40px)) scale(1);
+		animation: none;
+	}
+
+	div.screenshots div.container {
+		animation: intro-screenshots-scroll-mobile infinite 20s linear;
+	}
+	
+	div.screenshots div.container img {
+		height: 200px;
 	}
 }

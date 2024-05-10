@@ -16,7 +16,12 @@
 <body>
 	<nav>
 		<a href="#"><img src="img/logos/netpass.svg" alt="NetPass logo"></a>
-		<div>
+		<button onclick="burgerMenuToggle()">
+			<span class="burger-bar"></span>
+			<span class="burger-bar"></span>
+			<span class="burger-bar"></span>
+		</button>
+		<div class="links">
 			<a href="#about">
 				<p class="lang-en">About</p>
 			</a>
@@ -77,9 +82,15 @@
 	</section>
 
 	<script>
+		var burgerBars;
+		var burgerMenuOpened = false;
+		var navLinks;
+
 		document.addEventListener("DOMContentLoaded", function () {
 			AOS.init();
 			headerTypewrite();
+			burgerBars = document.getElementsByClassName('burger-bar');
+			navLinks = document.getElementsByClassName('links')[0];
 		});
 
 		function headerTypewrite() {
@@ -100,6 +111,22 @@
 					}, 300);
 				}
 			}, 500);
+		}
+
+		function burgerMenuToggle() {
+			burgerMenuOpened = !burgerMenuOpened;
+			for (let i = 0; i < burgerBars.length; i++) {
+				const bar = burgerBars[i];
+				if (burgerMenuOpened) {
+					bar.classList.add('burger-opened');
+					navLinks.classList.add('burger-opened');
+				}
+				else {
+					bar.classList.remove('burger-opened');
+					navLinks.classList.remove('burger-opened');
+				}
+				
+			}
 		}
 	</script>
 </body>
