@@ -8,6 +8,16 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
+	<script type="text/javascript">
+		// Redirect to the simplified page if the browser is from the Nintendo 3DS 
+		init();
+		function init() {
+			if (navigator.userAgent.match(/New Nintendo 3DS like iPhone/i) || navigator.userAgent.match(/Nintendo 3DS/i)) {
+				window.location = '3ds.html';
+			}
+		}
+	</script>
+
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
@@ -79,9 +89,13 @@
 			in the same location! And, while you are at the location, others who enter it can get passes with you. But
 			beware! You can only switch locations once every 10 hours!
 		</p>
+
+		<p class="comes-in" data-aos="fade" data-aos-offset="0" data-aos-delay="300" data-aos-duration="2000">
+			This page is still being made,<br>please come back later for more progress! ^^
+		</p>
 	</section>
 
-	<script>
+	<script type="text/javascript">
 		var burgerBars;
 		var burgerMenuOpened = false;
 		var navLinks;
@@ -125,7 +139,7 @@
 					bar.classList.remove('burger-opened');
 					navLinks.classList.remove('burger-opened');
 				}
-				
+
 			}
 		}
 	</script>

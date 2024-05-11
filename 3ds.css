@@ -1,0 +1,105 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #fff;
+	color: #1F7444;
+	-webkit-font-smoothing: antialiased;
+	width: 320px;
+	overflow-x: hidden;
+	padding-bottom: 320px;
+}
+
+body,
+input,
+button {
+	font-size: 1rem;
+	font-family: sans-serif;
+}
+
+button {
+	cursor: pointer;
+}
+
+button#burger-btn {
+	width: 40px;
+	height: 40px;
+	border: solid 3px #fff;
+	border-top: none;
+	border-right: none;
+	border-bottom-left-radius: 15px;
+	position: fixed;
+	left: 280px;
+	right: 0;
+	background: url(img/compressed/gradient-darker.jpg);
+	background-size: contain;
+}
+
+button#burger-btn img {
+	user-select: none;
+	display: block;
+	padding: 5px;
+	width: 100%;
+}
+
+.screen-helper {
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 320px;
+	width: 100%;
+	background: #111;
+	z-index: -3;
+}
+
+header {
+	background: url(img/compressed/header.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 140px;
+}
+
+header p {
+	color: #fff;
+	font-weight: 900;
+	text-shadow: 0 1px 2px #000;
+	text-align: right;
+	padding: 20px 12px;
+}
+
+div.title {
+	padding: 20px 0;
+}
+
+div.title img {
+	display: block;
+	width: 250px;
+	margin: 0 auto;
+}
+
+div.title p {
+	font-weight: 700;
+	text-align: center;
+	font-size: .8rem;
+	margin-top: -10px;
+	text-shadow: 0 -2px 0px #fff, 0 -1px 1px #fff;
+}
+
+section.introducing {
+	padding: 25px 0;
+}
+
+section.introducing p {
+	padding: 10px 15px;
+}
+
+section.introducing p.comes-in {
+	font-weight: 700;
+	text-align: center;
+}
