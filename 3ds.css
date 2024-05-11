@@ -35,7 +35,7 @@ button#burger-btn {
 	position: fixed;
 	left: 280px;
 	right: 0;
-	background: url(img/compressed/gradient-darker.jpg);
+	background-image: url(img/compressed/gradient-darker.jpg);
 	background-size: contain;
 }
 
@@ -43,7 +43,7 @@ button#burger-btn img {
 	user-select: none;
 	display: block;
 	padding: 5px;
-	width: 100%;
+	width: 37px;
 }
 
 .screen-helper {
@@ -58,8 +58,7 @@ button#burger-btn img {
 }
 
 header {
-	background: url(img/compressed/header.jpg);
-	background-repeat: no-repeat;
+	background-image: url(img/compressed/header.jpg);
 	background-size: cover;
 	background-position: center;
 	height: 140px;
