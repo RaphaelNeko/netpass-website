@@ -38,6 +38,12 @@
 	box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+	* {
+		scroll-behavior: smooth;
+	}
+}
+
 body {
 	background: #fff;
 	color: var(--np-green-dark);
@@ -90,8 +96,12 @@ nav div.links {
 	align-items: center;
 	justify-content: center;
 	gap: 30px;
+}
 
-	transition: all 200ms ease;
+@media (prefers-reduced-motion: no-preference) {
+	nav div.links {
+		transition: all 200ms ease;
+	}
 }
 
 nav div.links a {
@@ -105,7 +115,12 @@ nav div.links a:last-child {
 	padding: 10px 20px;
 	border-radius: 10px;
 	box-shadow: inset 0 0 0 0px var(--np-blue-selection), 0 2px 3px #00000044, inset 0 0 10px 5px #00000000;
-	transition: all 150ms ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	nav div.links a:last-child {
+		transition: all 150ms ease;
+	}
 }
 
 nav div.links a:last-child:hover {
@@ -142,8 +157,13 @@ nav button span {
 	width: 20px;
 	height: 3px;
 	background: var(--np-green-dark);
-	transition: all 200ms ease;
 	transform: translate(-50%, -50%) scaleX(1) rotate(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	nav button span {
+		transition: all 200ms ease;
+	}
 }
 
 nav button span:nth-child(1) {
@@ -213,8 +233,13 @@ header div.dialogue-box {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50px, -50px);
-	animation: rotation-small-slow infinite 8s ease-in-out;
-	transition: all 350ms ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	header div.dialogue-box {
+		animation: rotation-small-slow infinite 8s ease-in-out;
+		transition: all 350ms ease;
+	}
 }
 
 div.banner {
@@ -245,7 +270,12 @@ div.banner div.bg {
 	background: url(img/dot-pattern.png);
 	background-position: 0% 0%;
 	background-size: 32px;
-	animation: bg-banner-scroll infinite 6s linear;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	div.banner div.bg {
+		animation: bg-banner-scroll infinite 6s linear;
+	}
 }
 
 div.banner#about img {
@@ -274,11 +304,13 @@ section.introducing p.comes-in {
 	padding: 30px 0;
 }
 
-section.introducing p.comes-in span {
-	position: relative;
-	display: inline-block;
-	animation: wave-anim 1s infinite;
-	animation-delay: calc(.1s * var(--i));
+@media (prefers-reduced-motion: no-preference) {
+	section.introducing p.comes-in span {
+		position: relative;
+		display: inline-block;
+		animation: wave-anim 1s infinite;
+		animation-delay: calc(.1s * var(--i));
+	}
 }
 
 section.introducing div.screenshots {
@@ -290,7 +322,12 @@ section.introducing div.screenshots {
 
 div.screenshots div.container {
 	display: flex;
-	animation: intro-screenshots-scroll infinite 40s linear;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	div.screenshots div.container {
+		animation: intro-screenshots-scroll infinite 40s linear;
+	}
 }
 
 div.screenshots div.container img {
@@ -346,6 +383,7 @@ div.screenshots div.container img {
 }
 
 @keyframes wave-anim {
+
 	0%,
 	40%,
 	100% {
@@ -401,11 +439,11 @@ div.screenshots div.container img {
 	header {
 		height: 300px;
 	}
-	
+
 	header img {
 		transform: translateX(-50px);
 	}
-	
+
 	header div.dialogue-box {
 		left: inherit;
 		right: 4vw;
@@ -414,10 +452,12 @@ div.screenshots div.container img {
 		animation: none;
 	}
 
-	div.screenshots div.container {
-		animation: intro-screenshots-scroll-mobile infinite 20s linear;
+	@media (prefers-reduced-motion: no-preference) {
+		div.screenshots div.container {
+			animation: intro-screenshots-scroll-mobile infinite 20s linear;
+		}
 	}
-	
+
 	div.screenshots div.container img {
 		height: 200px;
 	}
